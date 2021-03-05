@@ -556,6 +556,14 @@ some others, because they will hide channel names that are the same.
         "imap"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.subFolders"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.subFolders"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.subFolders</code></a></span></dt><dd><p>The on-disk folder naming style. This option has no
+effect when <code class="option">flatten</code> is used.
+</p><p><span class="emphasis"><em>Type:</em></span> one of "Verbatim", "Maildir++", "Legacy"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "Verbatim"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "Maildir++"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/mbsync.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.msmtp.enable"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.msmtp.enable"><code class="option">accounts.email.accounts.&lt;name&gt;.msmtp.enable</code></a></span></dt><dd><p>Whether to enable msmtp.
 </p><p>
 If enabled then it is possible to use the
@@ -1257,7 +1265,7 @@ settings are in effect and will therefore help avoid breaking
 program configurations. Switching to a higher state version
 typically requires performing some manual steps, such as data
 conversion or moving files.
-</p><p><span class="emphasis"><em>Type:</em></span> one of "18.09", "19.03", "19.09", "20.03", "20.09", "21.03"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> one of "18.09", "19.03", "19.09", "20.03", "20.09", "21.03", "21.05"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "18.09"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/version.nix&gt;
@@ -1951,8 +1959,8 @@ directory.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bash.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/bash.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.historyFile"></a><a class="term" href="options.html#opt-programs.bash.historyFile"><code class="option">programs.bash.historyFile</code></a></span></dt><dd><p>Location of the bash history file.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "\$HOME/.bash_history"
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.historyFile"></a><a class="term" href="options.html#opt-programs.bash.historyFile"><code class="option">programs.bash.historyFile</code></a></span></dt><dd><p>Location of the bash history file.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bash.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/bash.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.historyFileSize"></a><a class="term" href="options.html#opt-programs.bash.historyFileSize"><code class="option">programs.bash.historyFileSize</code></a></span></dt><dd><p>Number of history lines to keep on file.</p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -2496,10 +2504,6 @@ default bindings and available commands.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/firefox.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.enableAdobeFlash"></a><a class="term" href="options.html#opt-programs.firefox.enableAdobeFlash"><code class="option">programs.firefox.enableAdobeFlash</code></a></span></dt><dd><p>Whether to enable the unfree Adobe Flash plugin.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/firefox.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.enableGnomeExtensions"></a><a class="term" href="options.html#opt-programs.firefox.enableGnomeExtensions"><code class="option">programs.firefox.enableGnomeExtensions</code></a></span></dt><dd><p>Whether to enable the GNOME Shell native host connector. Note, you
 also need to set the NixOS option
 <code class="literal">services.gnome3.chrome-gnome-shell.enable</code> to
@@ -2838,12 +2842,6 @@ CTRL-T keybinding.
         "--preview 'head {}'" 
         ]
     
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fzf.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/fzf.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fzf.historyWidgetCommand"></a><a class="term" href="options.html#opt-programs.fzf.historyWidgetCommand"><code class="option">programs.fzf.historyWidgetCommand</code></a></span></dt><dd><p>The command that gets executed as the source for fzf for the
-CTRL-R keybinding.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fzf.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/fzf.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fzf.historyWidgetOptions"></a><a class="term" href="options.html#opt-programs.fzf.historyWidgetOptions"><code class="option">programs.fzf.historyWidgetOptions</code></a></span></dt><dd><p>Command line options for the CTRL-R keybinding.
@@ -3288,13 +3286,11 @@ or checksum database.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.settings"></a><a class="term" href="options.html#opt-programs.gpg.settings"><code class="option">programs.gpg.settings</code></a></span></dt><dd><p>GnuPG configuration options. Available options are described
 in the gpg manpage:
 <a class="link" href="https://gnupg.org/documentation/manpage.html" target="_top">https://gnupg.org/documentation/manpage.html</a>.
-</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or booleans</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        {
-        no-comments = false; s2k-cipher-algo = "AES128"; 
-        }
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or boolean or list of stringss</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  no-comments = false;
+  s2k-cipher-algo = "AES128";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.home-manager.enable"></a><a class="term" href="options.html#opt-programs.home-manager.enable"><code class="option">programs.home-manager.enable</code></a></span></dt><dd><p>Whether to enable Home Manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -5203,7 +5199,9 @@ with this enabled only the relative name is shown.
         pkgs.neovim-unwrapped
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.configure"></a><a class="term" href="options.html#opt-programs.neovim.configure"><code class="option">programs.neovim.configure</code></a></span></dt><dd><p>Generate your init file from your list of plugins and custom commands,
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.configure"></a><a class="term" href="options.html#opt-programs.neovim.configure"><code class="option">programs.neovim.configure</code></a></span></dt><dd><p>Deprecated. Please use the other options.
+
+Generate your init file from your list of plugins and custom commands,
 and loads it from the store via <span class="command"><strong>nvim -u /nix/store/hash-vimrc</strong></span>
 
 </p><p>
@@ -5334,7 +5332,7 @@ use Python 3 plugins.
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/newsboat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/newsboat.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.newsboat.browser"></a><a class="term" href="options.html#opt-programs.newsboat.browser"><code class="option">programs.newsboat.browser</code></a></span></dt><dd><p>External browser to use.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "\${pkgs.xdg_utils}/bin/xdg-open"
+        "\${pkgs.xdg-utils}/bin/xdg-open"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/newsboat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/newsboat.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.newsboat.extraConfig"></a><a class="term" href="options.html#opt-programs.newsboat.extraConfig"><code class="option">programs.newsboat.extraConfig</code></a></span></dt><dd><p>Extra configuration values that will be appended to the end.
@@ -5572,6 +5570,11 @@ of options.
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/obs-studio.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/obs-studio.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.obs-studio.package"></a><a class="term" href="options.html#opt-programs.obs-studio.package"><code class="option">programs.obs-studio.package</code></a></span></dt><dd><p>OBS Studio package to install.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.obs-studio
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/obs-studio.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/obs-studio.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.obs-studio.plugins"></a><a class="term" href="options.html#opt-programs.obs-studio.plugins"><code class="option">programs.obs-studio.plugins</code></a></span></dt><dd><p>Optional OBS plugins.</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -5982,6 +5985,11 @@ a key is bound (via <code class="literal">bindings.default</code> or
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/qutebrowser.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/qutebrowser.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.qutebrowser.loadAutoconfig"></a><a class="term" href="options.html#opt-programs.qutebrowser.loadAutoconfig"><code class="option">programs.qutebrowser.loadAutoconfig</code></a></span></dt><dd><p>Load settings configured via the GUI.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/qutebrowser.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/qutebrowser.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.qutebrowser.searchEngines"></a><a class="term" href="options.html#opt-programs.qutebrowser.searchEngines"><code class="option">programs.qutebrowser.searchEngines</code></a></span></dt><dd><p>Search engines that can be used via the address bar. Maps a search
 engine name (such as <code class="literal">DEFAULT</code>, or
 <code class="literal">ddg</code>) to a URL with a <code class="literal">{}</code>
@@ -6183,7 +6191,7 @@ should be used whenever possible.
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.extraConfig"><code class="option">programs.rofi.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of signed integer or string or booleans</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.extraConfig"><code class="option">programs.rofi.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or signed integer or boolean or Rasi literal string or list of string or signed integer or boolean or Rasi literal stringss or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -6271,14 +6279,33 @@ AUTOTYPE_field='autotype'
         "\${pkgs.gnome3.gnome_terminal}/bin/gnome-terminal"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.theme"></a><a class="term" href="options.html#opt-programs.rofi.theme"><code class="option">programs.rofi.theme</code></a></span></dt><dd><p>Name of theme or path to theme file in rasi format. Available
-named themes can be viewed using the
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.theme"></a><a class="term" href="options.html#opt-programs.rofi.theme"><code class="option">programs.rofi.theme</code></a></span></dt><dd><p>Name of theme or path to theme file in rasi format or attribute set with
+theme configuration. Available named themes can be viewed using the
 <span class="command"><strong>rofi-theme-selector</strong></span> tool.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or path or attribute set of attribute set of string or signed integer or boolean or Rasi literal string or list of string or signed integer or boolean or Rasi literal stringss or strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "Arc"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">let
+  inherit (config.lib.formats.rasi) mkLiteral;
+in {
+  "*" = {
+    background-color = mkLiteral "#000000";
+    foreground-color = mkLiteral "rgba ( 250, 251, 252, 100 % )";
+    border-color = mkLiteral "#FFFFFF";
+    width = 512;
+  };
+
+  "#inputbar" = {
+    children = map mkLiteral [ "prompt" "entry" ];
+  };
+
+  "#textbox-prompt-colon" = {
+    expand = false;
+    str = ":";
+    margin = mkLiteral "0px 0.3em 0em 0em";
+    text-color = mkLiteral "@foreground-color";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.width"></a><a class="term" href="options.html#opt-programs.rofi.width"><code class="option">programs.rofi.width</code></a></span></dt><dd><p>Window width</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
@@ -6310,6 +6337,72 @@ for explanation about possible values.
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rtorrent.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rtorrent.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.enable"></a><a class="term" href="options.html#opt-programs.sbt.enable"><code class="option">programs.sbt.enable</code></a></span></dt><dd><p>Whether to enable sbt.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.package"></a><a class="term" href="options.html#opt-programs.sbt.package"><code class="option">programs.sbt.package</code></a></span></dt><dd><p>The package with sbt to be installed.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.sbt
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.baseConfigPath"></a><a class="term" href="options.html#opt-programs.sbt.baseConfigPath"><code class="option">programs.sbt.baseConfigPath</code></a></span></dt><dd><p>Where the plugins and credentials should be located.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ".sbt/1.0"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials"></a><a class="term" href="options.html#opt-programs.sbt.credentials"><code class="option">programs.sbt.credentials</code></a></span></dt><dd><p>A list of credentials to define in the sbt configuration directory.
+</p><p><span class="emphasis"><em>Type:</em></span> list of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[{
+  realm = "Sonatype Nexus Repository Manager";
+  host = "example.com";
+  user = "user";
+  passwordCommand = "pass show sbt/user@example.com";
+}]
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.host"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.host"><code class="option">programs.sbt.credentials.*.host</code></a></span></dt><dd><p>The hostname of the repository you're authenticating to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.passwordCommand"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.passwordCommand"><code class="option">programs.sbt.credentials.*.passwordCommand</code></a></span></dt><dd><p>The command that provides the password or authentication token for
+the repository.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.realm"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.realm"><code class="option">programs.sbt.credentials.*.realm</code></a></span></dt><dd><p>The realm of the repository you're authenticating to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.user"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.user"><code class="option">programs.sbt.credentials.*.user</code></a></span></dt><dd><p>The user you're using to authenticate.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins"></a><a class="term" href="options.html#opt-programs.sbt.plugins"><code class="option">programs.sbt.plugins</code></a></span></dt><dd><p>A list of plugins to place in the sbt configuration directory.
+</p><p><span class="emphasis"><em>Type:</em></span> list of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
+  {
+    org = "net.virtual-void";
+    artifact = "sbt-dependency-graph";
+    version = "0.10.0-RC1";
+  }
+  {
+    org = "com.dwijnand";
+    artifact = "sbt-project-graph";
+    version = "0.4.0";
+  }
+]
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.artifact"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.artifact"><code class="option">programs.sbt.plugins.*.artifact</code></a></span></dt><dd><p>The name of the artifact.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.org"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.org"><code class="option">programs.sbt.plugins.*.org</code></a></span></dt><dd><p>The organization the artifact is published under.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.version"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.version"><code class="option">programs.sbt.plugins.*.version</code></a></span></dt><dd><p>The version of the plugin.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.skim.enable"></a><a class="term" href="options.html#opt-programs.skim.enable"><code class="option">programs.skim.enable</code></a></span></dt><dd><p>Whether to enable skim - a command-line fuzzy finder.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -7400,7 +7493,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.52.1)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.53.2)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -7453,6 +7546,16 @@ overlay or set this option. Example overlay configuration:
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.args"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.args"><code class="option">programs.vscode.keybindings.*.args</code></a></span></dt><dd><p>Optional arguments for a command.</p><p><span class="emphasis"><em>Type:</em></span> null or attribute set</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        {
+        direction = "up"; 
+        }
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.command"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.command"><code class="option">programs.vscode.keybindings.*.command</code></a></span></dt><dd><p>The VS Code command to execute.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "editor.action.clipboardCopyAction"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
@@ -7461,8 +7564,8 @@ overlay or set this option. Example overlay configuration:
         "ctrl+c"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.when"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.when"><code class="option">programs.vscode.keybindings.*.when</code></a></span></dt><dd><p>Optional context filter.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        ""
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.when"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.when"><code class="option">programs.vscode.keybindings.*.when</code></a></span></dt><dd><p>Optional context filter.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "textInputFocus"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
@@ -8450,6 +8553,22 @@ but are substituted anywhere on a line.
         "gnome"
       </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.qgnomeplatform</code> (qgnomeplatform-0.6.1): QPlatformTheme for a better Qt application inclusion in GNOME</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/qt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-qt.style.package"></a><a class="term" href="options.html#opt-qt.style.package"><code class="option">qt.style.package</code></a></span></dt><dd><p>Theme package to be used in Qt5 applications.</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.adwaita-qt</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/qt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-qt.style.name"></a><a class="term" href="options.html#opt-qt.style.name"><code class="option">qt.style.name</code></a></span></dt><dd><p>Selects the style to use for Qt5 applications.</p><p>The options are
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">adwaita</code>, </span><span class="term"><code class="literal">adwaita-dark</code></span></dt><dd><p>Use Adwaita Qt style with
+      <a class="link" href="https://github.com/FedoraQt/adwaita-qt" target="_top">adwaita</a>
+    </p></dd><dt><span class="term"><code class="literal">cleanlooks</code>, </span><span class="term"><code class="literal">gtk2</code>, </span><span class="term"><code class="literal">motif</code>, </span><span class="term"><code class="literal">plastique</code></span></dt><dd><p>Use styles from
+      <a class="link" href="https://github.com/qt/qtstyleplugins" target="_top">qtstyleplugins</a>
+    </p></dd></dl></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "adwaita-dark"
+      </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.adwaita-qt</code> (adwaita-qt-1.1.4): A style to bend Qt applications to look like they belong into GNOME Shell</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/qt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.blueman-applet.enable"></a><a class="term" href="options.html#opt-services.blueman-applet.enable"><code class="option">services.blueman-applet.enable</code></a></span></dt><dd><p>Whether to enable the Blueman applet.
 </p><p>
 Note, for the applet to work, the 'blueman' service should
@@ -8688,9 +8807,7 @@ else pkgs.emacs
         "\${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fluidsynth.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/fluidsynth.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.enable"></a><a class="term" href="options.html#opt-services.gammastep.enable"><code class="option">services.gammastep.enable</code></a></span></dt><dd><p>Enable Gammastep to change your screen's colour temperature
-depending on the time of day.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.enable"></a><a class="term" href="options.html#opt-services.gammastep.enable"><code class="option">services.gammastep.enable</code></a></span></dt><dd><p>Whether to enable Gammastep.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
@@ -8701,45 +8818,33 @@ depending on the time of day.
         pkgs.gammastep
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.brightness.day"></a><a class="term" href="options.html#opt-services.gammastep.brightness.day"><code class="option">services.gammastep.brightness.day</code></a></span></dt><dd><p>Screen brightness to apply during the day,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.brightness.night"></a><a class="term" href="options.html#opt-services.gammastep.brightness.night"><code class="option">services.gammastep.brightness.night</code></a></span></dt><dd><p>Screen brightness to apply during the night,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.extraOptions"></a><a class="term" href="options.html#opt-services.gammastep.extraOptions"><code class="option">services.gammastep.extraOptions</code></a></span></dt><dd><p>Additional command-line arguments to pass to
-<span class="command"><strong>redshift</strong></span>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.dawnTime"></a><a class="term" href="options.html#opt-services.gammastep.dawnTime"><code class="option">services.gammastep.dawnTime</code></a></span></dt><dd><p>Set the time interval of dawn manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "-v" "-m randr" 
-        ]
-    
+        "6:00-7:45"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.duskTime"></a><a class="term" href="options.html#opt-services.gammastep.duskTime"><code class="option">services.gammastep.duskTime</code></a></span></dt><dd><p>Set the time interval of dusk manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "18:35-20:15"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.latitude"></a><a class="term" href="options.html#opt-services.gammastep.latitude"><code class="option">services.gammastep.latitude</code></a></span></dt><dd><p>Your current latitude, between <code class="literal">-90.0</code> and
 <code class="literal">90.0</code>. Must be provided along with
 longitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.longitude"></a><a class="term" href="options.html#opt-services.gammastep.longitude"><code class="option">services.gammastep.longitude</code></a></span></dt><dd><p>Your current longitude, between <code class="literal">-180.0</code> and
 <code class="literal">180.0</code>. Must be provided along with
 latitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
@@ -8750,6 +8855,25 @@ geoclue2 service.
 </p><p><span class="emphasis"><em>Type:</em></span> one of "manual", "geoclue2"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "manual"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.settings"></a><a class="term" href="options.html#opt-services.gammastep.settings"><code class="option">services.gammastep.settings</code></a></span></dt><dd><p>The configuration to pass to Gammastep.
+Available options for Gammastep described in
+<span class="citerefentry"><span class="refentrytitle">gammastep</span>(1)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  general = {
+    adjustment-method = "randr";
+  };
+  randr = {
+    screen = 0;
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.temperature.day"></a><a class="term" href="options.html#opt-services.gammastep.temperature.day"><code class="option">services.gammastep.temperature.day</code></a></span></dt><dd><p>Colour temperature to use during the day, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
@@ -9698,6 +9822,16 @@ man page for more examples.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/plan9port.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/plan9port.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.playerctld.enable"></a><a class="term" href="options.html#opt-services.playerctld.enable"><code class="option">services.playerctld.enable</code></a></span></dt><dd><p>Whether to enable playerctld daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/playerctld.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/playerctld.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.playerctld.package"></a><a class="term" href="options.html#opt-services.playerctld.package"><code class="option">services.playerctld.package</code></a></span></dt><dd><p>The playerctl package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.playerctl
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/playerctld.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/playerctld.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.polybar.enable"></a><a class="term" href="options.html#opt-services.polybar.enable"><code class="option">services.polybar.enable</code></a></span></dt><dd><p>Whether to enable Polybar status bar.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9716,6 +9850,7 @@ man page for more examples.
                     &lt;home-manager/modules/services/polybar.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.polybar.config"></a><a class="term" href="options.html#opt-services.polybar.config"><code class="option">services.polybar.config</code></a></span></dt><dd><p>Polybar configuration. Can be either path to a file, or set of attributes
 that will be used to create the final configuration.
+See also <code class="option">services.polybar.settings</code> for a more nix-friendly format.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of string or boolean or signed integer or list of stringsss or path convertible to it</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -9762,11 +9897,64 @@ Note, this script must start all bars in the background and then terminate.
         "polybar bar &amp;"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/polybar.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/polybar.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.polybar.settings"></a><a class="term" href="options.html#opt-services.polybar.settings"><code class="option">services.polybar.settings</code></a></span></dt><dd><p>Polybar configuration. This takes a nix attrset and converts it to the
+strange data format that polybar uses.
+Each entry will be converted to a section in the output file.
+Several things are treated specially: nested keys are converted
+to dash-separated keys; the special <code class="literal">text</code> key is ignored as a nested key,
+to allow mixing different levels of nesting; and lists are converted to
+polybar's <code class="literal">foo-0, foo-1, ...</code> format.
+</p><p>
+For example:
+</p><pre class="programlisting nix">
+"module/volume" = {
+  type = "internal/pulseaudio";
+  format.volume = "&lt;ramp-volume&gt; &lt;label-volume&gt;";
+  label.muted.text = "🔇";
+  label.muted.foreground = "#666";
+  ramp.volume = ["🔈" "🔉" "🔊"];
+  click.right = "pavucontrol &amp;";
+}
+</pre><p>
+becomes:
+</p><pre class="programlisting ini">
+[module/volume]
+type=internal/pulseaudio
+format-volume=&lt;ramp-volume&gt; &lt;label-volume&gt;
+label-muted=🔇
+label-muted-foreground=#666
+ramp-volume-0=🔈
+ramp-volume-1=🔉
+ramp-volume-2=🔊
+click-right=pavucontrol &amp;
+</pre><p>
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute sets</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "module/volume" = {
+    type = "internal/pulseaudio";
+    format.volume = "&lt;ramp-volume&gt; &lt;label-volume&gt;";
+    label.muted.text = "🔇";
+    label.muted.foreground = "#666";
+    ramp.volume = ["🔈" "🔉" "🔊"];
+    click.right = "pavucontrol &amp;";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/polybar.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/polybar.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.enable"></a><a class="term" href="options.html#opt-services.pulseeffects.enable"><code class="option">services.pulseeffects.enable</code></a></span></dt><dd><p>Whether to enable Pulseeffects daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pulseeffects.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pulseeffects.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.package"></a><a class="term" href="options.html#opt-services.pulseeffects.package"><code class="option">services.pulseeffects.package</code></a></span></dt><dd><p>Pulseeffects package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.pulseeffects
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.pulseeffects-pw</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pulseeffects.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/pulseeffects.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.preset"></a><a class="term" href="options.html#opt-services.pulseeffects.preset"><code class="option">services.pulseeffects.preset</code></a></span></dt><dd><p>Which preset to use when starting pulseeffects.
 Will likely need to launch pulseeffects to initially create preset.
@@ -9814,9 +10002,7 @@ as a duration understood by systemd.
         "1h"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/random-background.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/random-background.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.enable"></a><a class="term" href="options.html#opt-services.redshift.enable"><code class="option">services.redshift.enable</code></a></span></dt><dd><p>Enable Redshift to change your screen's colour temperature
-depending on the time of day.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.enable"></a><a class="term" href="options.html#opt-services.redshift.enable"><code class="option">services.redshift.enable</code></a></span></dt><dd><p>Whether to enable Redshift.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
@@ -9827,45 +10013,33 @@ depending on the time of day.
         pkgs.redshift
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.brightness.day"></a><a class="term" href="options.html#opt-services.redshift.brightness.day"><code class="option">services.redshift.brightness.day</code></a></span></dt><dd><p>Screen brightness to apply during the day,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.brightness.night"></a><a class="term" href="options.html#opt-services.redshift.brightness.night"><code class="option">services.redshift.brightness.night</code></a></span></dt><dd><p>Screen brightness to apply during the night,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.extraOptions"></a><a class="term" href="options.html#opt-services.redshift.extraOptions"><code class="option">services.redshift.extraOptions</code></a></span></dt><dd><p>Additional command-line arguments to pass to
-<span class="command"><strong>redshift</strong></span>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.dawnTime"></a><a class="term" href="options.html#opt-services.redshift.dawnTime"><code class="option">services.redshift.dawnTime</code></a></span></dt><dd><p>Set the time interval of dawn manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "-v" "-m randr" 
-        ]
-    
+        "6:00-7:45"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.duskTime"></a><a class="term" href="options.html#opt-services.redshift.duskTime"><code class="option">services.redshift.duskTime</code></a></span></dt><dd><p>Set the time interval of dusk manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "18:35-20:15"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.latitude"></a><a class="term" href="options.html#opt-services.redshift.latitude"><code class="option">services.redshift.latitude</code></a></span></dt><dd><p>Your current latitude, between <code class="literal">-90.0</code> and
 <code class="literal">90.0</code>. Must be provided along with
 longitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.longitude"></a><a class="term" href="options.html#opt-services.redshift.longitude"><code class="option">services.redshift.longitude</code></a></span></dt><dd><p>Your current longitude, between <code class="literal">-180.0</code> and
 <code class="literal">180.0</code>. Must be provided along with
 latitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
@@ -9876,6 +10050,25 @@ geoclue2 service.
 </p><p><span class="emphasis"><em>Type:</em></span> one of "manual", "geoclue2"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "manual"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.settings"></a><a class="term" href="options.html#opt-services.redshift.settings"><code class="option">services.redshift.settings</code></a></span></dt><dd><p>The configuration to pass to Redshift.
+Available options for Redshift described in
+<span class="citerefentry"><span class="refentrytitle">redshift</span>(1)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  redshift = {
+    adjustment-method = "randr";
+  };
+  randr = {
+    screen = 0;
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.temperature.day"></a><a class="term" href="options.html#opt-services.redshift.temperature.day"><code class="option">services.redshift.temperature.day</code></a></span></dt><dd><p>Colour temperature to use during the day, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
@@ -9954,7 +10147,7 @@ Can be used to specify extensions.
         pkgs.spotifyd
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">(pkgs.spotifyd.override { withKeyring = true; })</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/spotifyd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/spotifyd.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.spotifyd.settings"></a><a class="term" href="options.html#opt-services.spotifyd.settings"><code class="option">services.spotifyd.settings</code></a></span></dt><dd><p>Configuration for spotifyd</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.spotifyd.settings"></a><a class="term" href="options.html#opt-services.spotifyd.settings"><code class="option">services.spotifyd.settings</code></a></span></dt><dd><p>Configuration for spotifyd</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
