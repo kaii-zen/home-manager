@@ -536,6 +536,8 @@ in
         //
         (maybeSet "LC_MEASUREMENT" cfg.language.measurement);
 
+    home.sessionPath = lib.mkOrder 1000 "\${PATH:+:}$PATH";
+
     home.packages = [
       # Provide a file holding all session variables.
       (
@@ -548,8 +550,7 @@ in
             export __HM_SESS_VARS_SOURCED=1
 
             ${config.lib.shell.exportAll cfg.sessionVariables}
-          '' + lib.optionalString (cfg.sessionPath != [ ]) ''
-            export PATH="${concatStringsSep ":" cfg.sessionPath}''${PATH:+:}$PATH"
+            export PATH="${concatStringsSep ":" cfg.sessionPath}"
           '' + cfg.sessionVariablesExtra;
         }
       )
