@@ -841,11 +841,9 @@ undefined for state version ≥ 20.09
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.keyboard"></a><a class="term" href="options.html#opt-home.keyboard"><code class="option">home.keyboard</code></a></span></dt><dd><p>Keyboard configuration. Set to <code class="literal">null</code> to
 disable Home Manager keyboard management.
-</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        {
-        
-        }
-    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">"{ }"  for state version &lt; 21.11,
+"null" for state version ≥ 21.11
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.keyboard.layout"></a><a class="term" href="options.html#opt-home.keyboard.layout"><code class="option">home.keyboard.layout</code></a></span></dt><dd><p>Keyboard layout. If <code class="literal">null</code>, then the system
 configuration will be used.
@@ -917,13 +915,22 @@ version ≥ 19.09 and <code class="literal">""</code> otherwise.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.language.time"></a><a class="term" href="options.html#opt-home.language.time"><code class="option">home.language.time</code></a></span></dt><dd><p>The language to use for formatting times.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.sessionPath"></a><a class="term" href="options.html#opt-home.sessionPath"><code class="option">home.sessionPath</code></a></span></dt><dd><p>Extra directories to add to <code class="envar">PATH</code>.</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.sessionPath"></a><a class="term" href="options.html#opt-home.sessionPath"><code class="option">home.sessionPath</code></a></span></dt><dd><p>Extra directories to add to <code class="envar">PATH</code>.
+
+</p><p>
+
+These directories are added to the <code class="envar">PATH</code> variable in a
+double-quoted context, so expressions like <code class="code">$HOME</code> are
+expanded by the shell. However, since expressions like <code class="code">~</code> or
+<code class="code">*</code> are escaped, they will end up in the <code class="envar">PATH</code>
+verbatim.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         [
         
         ]
     </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         [
-        ".git/safe/../../bin" "\${xdg.configHome}/emacs/bin" "~/.local/bin" 
+        "$HOME/.local/bin" "\${xdg.configHome}/emacs/bin" ".git/safe/../../bin" 
         ]
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
@@ -965,6 +972,23 @@ home.sessionVariables = {
         EDITOR = "emacs"; GS_OPTIONS = "-sPAPERSIZE=a4"; 
         }
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/home-environment.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.shellAliases"></a><a class="term" href="options.html#opt-home.shellAliases"><code class="option">home.shellAliases</code></a></span></dt><dd><p>An attribute set that maps aliases (the top level attribute names
+in this option) to command strings or directly to build outputs.
+</p><p>
+This option should only be used to manage simple aliases that are
+compatible across all shells. If you need to use a shell specific
+feature then make sure to use a shell specific option, for example
+<a class="xref" href="options.html#opt-programs.bash.shellAliases"><code class="option">programs.bash.shellAliases</code></a> for Bash.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  g = "git";
+  "..." = "cd ../..";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.stateVersion"></a><a class="term" href="options.html#opt-home.stateVersion"><code class="option">home.stateVersion</code></a></span></dt><dd><p>It is occasionally necessary for Home Manager to change
 configuration defaults in a way that is incompatible with
@@ -1926,8 +1950,6 @@ for the full list of options.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enable"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enable"><code class="option">programs.direnv.nix-direnv.enable</code></a></span></dt><dd><p>Whether to enable <a class="link" href="https://github.com/nix-community/nix-direnv" target="_top">nix-direnv</a>,
     a fast, persistent use_nix implementation for direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/direnv.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enableFlakes"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enableFlakes"><code class="option">programs.direnv.nix-direnv.enableFlakes</code></a></span></dt><dd><p>Whether to enable Flake support in nix-direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/direnv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.stdlib"></a><a class="term" href="options.html#opt-programs.direnv.stdlib"><code class="option">programs.direnv.stdlib</code></a></span></dt><dd><p>Custom stdlib written to
 <code class="filename">~/.config/direnv/direnvrc</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
@@ -2849,17 +2871,12 @@ for supported values.
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/hexchat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/hexchat.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.hexchat.theme"></a><a class="term" href="options.html#opt-programs.hexchat.theme"><code class="option">programs.hexchat.theme</code></a></span></dt><dd><p>Theme package for HexChat. Expects a derivation containing decompressed
-theme files. <code class="literal">.hct</code> file format requires unzip
-decompression, as seen in example.
-</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">stdenv.mkDerivation rec {
-  name = "hexchat-theme-MatriY";
-  buildInputs = [ pkgs.unzip ];
-  src = fetchurl {
-      url = "https://dl.hexchat.net/themes/MatriY.hct";
-      sha256 = "sha256-ffkFJvySfl0Hwja3y7XCiNJceUrGvlEoEm97eYNMTZc=";
-  };
-  unpackPhase = "unzip ${src}";
-  installPhase = "cp -r . $out";
+theme files. Note, <code class="literal">.hct</code> files are actually ZIP files,
+as seen in example.
+</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">source = pkgs.fetchzip {
+  url = "https://dl.hexchat.net/themes/Monokai.hct#Monokai.zip";
+  sha256 = "sha256-WCdgEr8PwKSZvBMs0fN7E2gOjNM0c2DscZGSKSmdID0=";
+  stripRoot = false;
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/hexchat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/hexchat.nix&gt;
@@ -3995,7 +4012,7 @@ control the default matplotlib behavior.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.enable"></a><a class="term" href="options.html#opt-programs.mpv.enable"><code class="option">programs.mpv.enable</code></a></span></dt><dd><p>Whether to enable mpv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.package"></a><a class="term" href="options.html#opt-programs.mpv.package"><code class="option">programs.mpv.package</code></a></span></dt><dd><p>Package providing mpv.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of mpv-with-scripts-0.33.1)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of mpv-with-scripts-0.34.0)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.bindings"></a><a class="term" href="options.html#opt-programs.mpv.bindings"><code class="option">programs.mpv.bindings</code></a></span></dt><dd><p>Input configuration written to
 <code class="filename">~/.config/mpv/input.conf</code>. See
@@ -5983,7 +6000,7 @@ manually set any options not listed above.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.enable"></a><a class="term" href="options.html#opt-programs.vscode.enable"><code class="option">programs.vscode.enable</code></a></span></dt><dd><p>Whether to enable Visual Studio Code.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.61.2)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.62.1)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
 These will override but not delete manually installed ones.
@@ -6674,6 +6691,8 @@ but are substituted anywhere on a line.
         
         ]
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zplug.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zplug.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.zplug.zplugHome"></a><a class="term" href="options.html#opt-programs.zsh.zplug.zplugHome"><code class="option">programs.zsh.zplug.zplugHome</code></a></span></dt><dd><p>Path to zplug home directory.</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"~/.zplug"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zplug.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zplug.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-qt.enable"></a><a class="term" href="options.html#opt-qt.enable"><code class="option">qt.enable</code></a></span></dt><dd><p>Whether to enable Qt 4 and 5 configuration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/qt.nix&gt;
@@ -9529,6 +9548,9 @@ the list is attempted, and so on.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-mime-apps.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-mime-apps.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.stateHome"></a><a class="term" href="options.html#opt-xdg.stateHome"><code class="option">xdg.stateHome</code></a></span></dt><dd><p>Absolute path to directory holding application states.
+</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"~/.local/state"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.config"></a><a class="term" href="options.html#opt-xdg.systemDirs.config"><code class="option">xdg.systemDirs.config</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_CONFIG_DIRS</code>
 in the user session.
 </p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
