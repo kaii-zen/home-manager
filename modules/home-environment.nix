@@ -536,7 +536,7 @@ in
         //
         (maybeSet "LC_MEASUREMENT" cfg.language.measurement);
 
-    home.sessionPath = lib.mkOrder 1000 "\${PATH:+:}$PATH";
+    home.sessionPath = lib.mkOrder 1000 [ "\${PATH:+:}$PATH" ];
 
     home.packages = [
       # Provide a file holding all session variables.
