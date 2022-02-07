@@ -99,13 +99,13 @@ in {
     };
 
     programs.bash.initExtra = mkIf cfg.enableBashIntegration ''
-      if [[ $TERM != "dumb" && (-z $INSIDE_EMACS || $INSIDE_EMACS == "vterm") ]]; then
+      if [[ $TERM != "dumb" && (-z $INSIDE_EMACS || $INSIDE_EMACS =~ "vterm") ]]; then
         eval "$(${starshipCmd} init bash)"
       fi
     '';
 
     programs.zsh.initExtra = mkIf cfg.enableZshIntegration ''
-      if [[ $TERM != "dumb" && (-z $INSIDE_EMACS || $INSIDE_EMACS == "vterm") ]]; then
+      if [[ $TERM != "dumb" && (-z $INSIDE_EMACS || $INSIDE_EMACS =~ "vterm") ]]; then
         eval "$(${starshipCmd} init zsh)"
       fi
     '';
